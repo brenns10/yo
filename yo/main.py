@@ -3105,8 +3105,6 @@ class VolumeCreateCmd(YoCmd):
         volume_attach_args(parser, for_create=True)
 
     def run(self) -> None:
-        if self.args.setup:
-            self.args.attach = True
         if self.args.attach and not self.args.inst_name:
             raise YoExc("--attach requires a value for --for")
 
